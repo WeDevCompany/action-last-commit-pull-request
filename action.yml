@@ -1,0 +1,13 @@
+# action.yml
+name: "Hello World"
+description: "Greet someone and record the time"
+inputs:
+  token:
+    description: "The github token"
+    required: true
+  pullRequest:
+    description: "The pull request to take the last comment"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
