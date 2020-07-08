@@ -1,8 +1,10 @@
 #!/bin/bash
 
-PR=$(curl -i -H "Authorization: token ${INPUT_TOKEN}" ${INPUT_PULLREQUEST}/commits?page=last)
+LAST_PR=$(curl -i -H "Authorization: token ${INPUT_TOKEN}" ${INPUT_PULLREQUEST}/commits?page=last | jq '[.[] ] | last')
 
-# Final env
-echo $PR
-echo "::set-output name=env::$PR"
+COMMIT_MESSAGE=$LAST_PR | jq '.commit["message"]'
+
+
+echo $COMMIT_MESSAGE
+echo "::set-output name=env::$COMMIT_MESSAGE"
 
