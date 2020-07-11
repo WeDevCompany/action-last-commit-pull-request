@@ -6,8 +6,6 @@ RUN apt-get update \
 
 RUN apt-get install jq -y
 
-RUN apt-get install git -y
-
 # Copias tu archivo de código de tu repositorio de acción a la ruta `/`del contenedor
 COPY entrypoint.sh /entrypoint.sh
 

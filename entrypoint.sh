@@ -6,5 +6,5 @@ COMMIT_MESSAGE=$(echo $LAST_PR | jq '.commit["message"]')
 
 
 echo $COMMIT_MESSAGE
-echo "::set-output name=env::$COMMIT_MESSAGE"
+echo "::set-output name=message::$COMMIT_MESSAGE"
 

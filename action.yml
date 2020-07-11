@@ -8,6 +8,9 @@ inputs:
   pullRequest:
     description: "The pull request to take the last comment"
     required: true
+outputs:
+  message: # id of output
+    description: "Last commit message of PR"
 runs:
   using: "docker"
   image: "Dockerfile"
